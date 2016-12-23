@@ -76,7 +76,6 @@ class CarouselShortcode extends GravstrapShortcode
         return $this->twig->processTemplate($this->template(), [
             'id' => $shortcode->getParameter('id'),
             'name' => $shortcode->getParameter('name'),
-            'images_path' => $shortcode->getParameter('images_path'),
             'previous_label' => $this->defaultValue($shortcode->getParameter('previous_label'), 'Previous'),
             'next_label' => $this->defaultValue($shortcode->getParameter('next_label'), 'Next'),
             'items' => $this->shortcode->getStates($this->shortcode->getId($shortcode)),
