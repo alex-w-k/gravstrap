@@ -14,8 +14,8 @@
               'caption': item.content|trim,
             } %}
         {% endif %}
-        <div class="item{% if loop.first %} active{% endif %}">
-            {{ grav.page.find('/images').media.images[values.image] }} 
+        <div class="item{% if loop.first %} active{% endif %} text-center">
+            {{ grav.page.find(images_path).media.images[values.image] }}
             <div class="carousel-caption">{{ values.caption }}</div>
         </div>
         {% endfor %}
