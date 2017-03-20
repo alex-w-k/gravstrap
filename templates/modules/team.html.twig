@@ -10,7 +10,6 @@
                   'attributes': parse_attributes(item.getParameter('attributes')),
                 } %}
             {% endif %}
-
             <div {% include 'partials/_attributes.html.twig' with { 'attributes': values.attributes } %}>
                 <div class="item-image">
                     {{ grav.page.find('/images').media.images[values.image].cropZoom(150, 150) }}
@@ -19,6 +18,10 @@
                 <div class="item-text">{{ values.content }}</div>
                 {% endif %}
             </div>
+						{% if loop.index is even %}
+								</div>
+								<div class="row">
+						{% endif %}
         {% endfor %}
         </div>
     {% endblock %}
