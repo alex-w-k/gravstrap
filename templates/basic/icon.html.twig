@@ -3,6 +3,10 @@
 {% set type = icon_type|default('glyphicon') %}
 {% if type == 'glyphicon' %}
 <span class="glyphicon glyphicon-{{ icon }} {{ attributes['class'] }}" {% include 'partials/_attributes.html.twig' with {'ignore': ['class']} %}></span>
+{% elseif type -- 'fontawesome' and icon == 'twitter' %}
+<i class="fa fa-{{ icon }} {{ attributes['class'] }}" {% include 'partials/_attributes.html.twig' with {'ignore': ['class']} %}> Twitter</i>
+{% elseif type == 'fontawesome' and icon == 'facebook' %}
+<i class="fa fa-{{ icon }} {{ attributes['class'] }}" {% include 'partials/_attributes.html.twig' with {'ignore': ['class']} %}> Facebook</i>
 {% elseif type == 'fontawesome' %}
 <i class="fa fa-{{ icon }} {{ attributes['class'] }}" {% include 'partials/_attributes.html.twig' with {'ignore': ['class']} %}></i>
 {% elseif type == 'mdi' %}
