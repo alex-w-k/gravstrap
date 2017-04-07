@@ -1,6 +1,16 @@
-{% if icon is defined %}
+{% if icon is defined and not ('twitter' or 'envelope' or 'facebook') %}
 <span class="fa-stack{% if large_icon|default(false) == true %} fa-lg{% endif %}">
   <i class="fa fa-stack-2x fa-{{ icon_container|default('circle-thin') }}"></i>
   <i class="fa fa-stack-1x fa-{{ icon }}"></i>
 </span>
+{% elseif icon == 'twitter' %}
+<span class="fa-stack{% if large_icon|default(false) == true %} fa-lg{% endif %}">
+  <i class="fa fa-stack-2x fa-{{ icon_container|default('circle-thin') }}"></i>
+  <i class="fa fa-stack-1x fa-{{ icon }}"></i>
+</span> Twitter
+{% elseif icon == 'envelope' %}
+<span class="fa-stack{% if large_icon|default(false) == true %} fa-lg{% endif %}">
+  <i class="fa fa-stack-2x fa-{{ icon_container|default('circle-thin') }}"></i>
+  <i class="fa fa-stack-1x fa-{{ icon }}"></i>
+</span> Email
 {% endif %}
